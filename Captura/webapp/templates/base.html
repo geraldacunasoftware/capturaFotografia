@@ -12,9 +12,36 @@
 </head>
 
 <body>
-
+    <nav class="navbar navbar-expand-lg bg-body-success fixed-top bg-nav">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Home</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#idMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="idMenu" class="collapse navbar-collapse justify-content-end mx-4">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#galeria" class="nav-link">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sobreMi" class="nav-link">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonios" class="nav-link">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block index %} {% block portada %} {% endblock portada %} {% block galeria %} {% endblock galeria %} {% block sobreMi %} {% endblock sobreMi %} {% block testimonios %} {% endblock testimonios %} {% block blog %} {% endblock blog %} {% endblock index%}
+    {% block contacto %} {% endblock contacto %}
     <script src="{% static 'js/base.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>

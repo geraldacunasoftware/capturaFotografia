@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block index %}
+<main class="poppins-regular">
+    {% block portada %}
+    <section>
+        <h1 class="h1">Portada</h1>
+    </section>
+
+    {% endblock portada %} {% block galeria %}
+    <section id="galeria">
+        <h1 class="h1">Galería</h1>
+    </section>
+
+    {% endblock galeria %} {% block sobreMi %}
+    <section id="sobreMi">
+        <h1 class="h1">Sobre Mí</h1>
+    </section>
+
+    {% endblock sobreMi %} {% block testimonios %}
+    <section id="testimonios">
+        <h1 class="h1">Testimonios</h1>
+    </section>
+
+    {% endblock testimonios %} {% block blog %}
+    <section id="blog">
+        <h1 class="h1">Blog</h1>
+    </section>
+
+    {% endblock blog %}
+</main>
+{% endblock index %}
