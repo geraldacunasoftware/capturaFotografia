@@ -8,6 +8,19 @@
     {% endblock portada %} {% block galeria %}
     <section id="galeria">
         <h1 class="h1">Galería</h1>
+        <div class="row mx-auto">
+            {% for categoria in categorias %}
+            <div class="card col-4 mx-3 my-3" style="width: 18rem;">
+                <div class="card-head mt-3">
+                    <h4 class="card-title">{{categoria}}</h4>
+                    <h4 class="card-title">{{categoria.nombre}}</h4>
+                </div>
+                <div class="body mx-3">
+                    <p class="card-text">{{categoria.descripcion}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </section>
 
     {% endblock galeria %} {% block sobreMi %}
