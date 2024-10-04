@@ -1,10 +1,7 @@
 from django.contrib import admin
-from .models import Categoria,Producto,CategoriaImg,ProductoImg,Blog,BlogImg
+from .models import Portada,Categoria,ImgCategoria
 
 # Register your models here.
+admin.site.register(Portada)
 admin.site.register(Categoria)
-admin.site.register(Producto)
-admin.site.register(CategoriaImg)
-admin.site.register(ProductoImg)
-admin.site.register(Blog)
-admin.site.register(BlogImg)
+admin.site.register(ImgCategoria)

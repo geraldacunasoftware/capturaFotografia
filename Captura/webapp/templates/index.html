@@ -1,43 +1,74 @@
 {% extends "base.html" %} {% load static %} {% block index %}
-<main class="poppins-regular">
-    {% block portada %}
-    <section>
-        <h1 class="h1">Portada</h1>
-    </section>
 
-    {% endblock portada %} {% block galeria %}
-    <section id="galeria">
-        <h1 class="h1">Galería</h1>
-        <div class="row mx-auto">
-            {% for categoria in categorias %}
-            <div class="card col-4 mx-3 my-3" style="width: 18rem;">
-                <div class="card-head mt-3">
-                    <h4 class="card-title">{{categoria}}</h4>
-                    <h4 class="card-title">{{categoria.nombre}}</h4>
+<main class="poppins-regular container-fluid mt-3">
+    <div class="row justify-content-center">
+        <div class="col-12 col-8-md col-4-sm">
+            {% block portada %}
+            <section>
+                <div id="carouselPortada" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for portada in portadas %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <div class="d-flex justify-content-center align-items-center mt-1">
+                                <img src="{{portada.img.url}}" class="img-fluid" alt="" srcset="">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="body mx-3">
-                    <p class="card-text">{{categoria.descripcion}}</p>
+                <button type="button" class="carousel-control-prev" data-bs-target="#carouselPortada" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+                <button type="button" class="carousel-control-next" data-bs-target="#carouselPortada" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+            </section>
+            {% endblock portada %}
+        </div> {% block galeria %}
+        <div>
+            <section id="galeria" class="text-center mt-5">
+                <h1>Galerías</h1>
+                <div class="container">
+                    <div class="row justify-content-around">
+                        {% for categoria in categorias %}
+                        <div class="col-sm-3 mb-4 text-center mx-4 my-5">
+                            <div class="card d-flex" style="width: 20rem; height:31rem">
+                                <div class="card-header">
+                                    <h1 class="card-title">{{categoria.nombre}}</h1>
+                                </div>
+                                <div class="card-body">
+                                    <img src="{{categoria.img.url}}" style="height: 25rem;" class="card-img-top imagen" alt="{{categoria.nombre}}" srcset="">
+                                </div>
+                                <a class="btn btn-primary" href="{% url 'webapp:categorias' categoria.id %}">Ver más...</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+            </section>
+
+            {% endblock galeria %} {% block sobreMi %}
+            <section id="sobreMi">
+                <h1 class="h1 text-center">Sobre Mí</h1>
+                <div class="container">
+
+                </div>
+            </section>
+
+            {% endblock sobreMi %} {% block testimonios %}
+            <section id="testimonios">
+                <h1 class="h1">Testimonios</h1>
+            </section>
+
+            {% endblock testimonios %} {% block blog %}
+            <section id="blog">
+                <h1 class="h1">Blog</h1>
+            </section>
+
+            {% endblock blog %}
         </div>
-    </section>
-
-    {% endblock galeria %} {% block sobreMi %}
-    <section id="sobreMi">
-        <h1 class="h1">Sobre Mí</h1>
-    </section>
-
-    {% endblock sobreMi %} {% block testimonios %}
-    <section id="testimonios">
-        <h1 class="h1">Testimonios</h1>
-    </section>
-
-    {% endblock testimonios %} {% block blog %}
-    <section id="blog">
-        <h1 class="h1">Blog</h1>
-    </section>
-
-    {% endblock blog %}
+    </div>
 </main>
 {% endblock index %}

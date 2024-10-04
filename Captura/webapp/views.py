@@ -1,9 +1,15 @@
 from django.shortcuts import render
-from .models import Categoria,CategoriaImg
+from .models import Portada,Categoria,ImgCategoria
 
 
 
 def base(request):
-    categorias = Categoria.objects.all()    
+    portadas = Portada.objects.all() 
+    categorias = Categoria.objects.all()
+    return render(request,'index.html',{'categorias':categorias,'portadas':portadas,'active_page':'base'})
 
-    return render(request,'index.html',{'categorias':categorias})
+def categorias(request,pk):
+    categoria = Categoria.objects.get(pk=pk)
+    imgsCategoria = ImgCategoria.objects.filter(categoria=categoria)
+    
+    return render(request,'categorias.html',{'imgsCategoria':imgsCategoria,'active_page':'categorias'})

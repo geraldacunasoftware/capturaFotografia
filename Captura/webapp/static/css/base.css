@@ -8,6 +8,39 @@ main {
     align-items: center;
 }
 
-.bg-nav {
-    background-color: brown;
+.carousel-inner img {
+    max-height: 83vh;
+    /* Limita la altura al 100% de la ventana */
+    object-fit: contain;
+    /* Asegura que la imagen mantenga su proporción */
+    width: auto;
+    /* Mantener el ancho automático para que no se distorsione */
+}
+
+
+/* Estilo inicial del navbar */
+
+.navbar {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Estilo del navbar cuando el usuario se desplaza */
+
+.navbar.scrolled {
+    background-color: #808080;
+    /* Cambia a tu color deseado */
+}
+
+.navbar.scrolled div ul li a {
+    color: #fff;
+    font-weight: bold;
+    /* Cambia a tu color deseado */
+}
+
+.navbar.scrolled div ul li a:hover {
+    color: #000;
+    font-weight: bold;
+    /* Cambia a tu color deseado */
 }
