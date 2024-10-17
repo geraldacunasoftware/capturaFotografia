@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5bgebao@_giuh9&!7@ed0wk287mjm$_)*q6a)lt=jo3#aez3+5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['captura_fotografia_project.herokuapp.com','127.0.0.1','127.0.0.1:8000']
+ALLOWED_HOSTS = ['capturafotografia.onrender.com','127.0.0.1','127.0.0.1:8000']
 
 
 # Application definition
@@ -77,11 +77,9 @@ WSGI_APPLICATION = 'captura_fotografia_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-    #'default': {
-    #   'ENGINE': 'django.db.backends.sqlite3',
-    #  'NAME': BASE_DIR / 'db.sqlite3',
-    #}
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'
+    )
 }
 
 
@@ -127,6 +125,9 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = 'media/'
 
 MEDIA_URL = '/public/'
+
+STATIC_ROOT = Path(BASE_DIR) / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
